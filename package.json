@@ -1,6 +1,6 @@
 {
   "name": "github-deploy-notify",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Inform github deployment API of deployment",
   "main": "lib/main.js",
   "scripts": {
