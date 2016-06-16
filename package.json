@@ -9,7 +9,7 @@
     "prepublish": "npm run compile"
   },
   "bin": {
-    "flowdock-deploy-notify": "lib/main-cli.js"
+    "github-deploy-notify": "lib/main-cli.js"
   },
   "keywords": [
     "flowdock"
