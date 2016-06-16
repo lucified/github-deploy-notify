@@ -1,5 +1,5 @@
 
-# Send notification to GitHub deployment API on deployment
+# Send notification to GitHub deployment API
 
 Simple utility for sending a notification to GitHub deployment API of a deployment. 
 
