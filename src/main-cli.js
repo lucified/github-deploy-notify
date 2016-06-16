@@ -31,14 +31,14 @@ if (fileExists(configFile)) {
 opts = Object.assign(opts, args);
 delete opts._;
 
-// check that options are valid
-if (!utils.validateOptions(opts)) {
-  process.exit(1);
-}
-
 if (!opts.githubToken) {
   console.log('No github token defined, not notifying deployment API');
   process.exit(0);
+}
+
+// check that options are valid
+if (!utils.validateOptions(opts)) {
+  process.exit(1);
 }
 
 if (opts.skip) {
