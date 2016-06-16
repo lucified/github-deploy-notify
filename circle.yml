@@ -1,0 +1,4 @@
+
+dependencies:
+  pre:
+    - nvm install && nvm use && nvm alias default $(nvm current)

@@ -1,0 +1,62 @@
+{
+  "name": "github-deploy-notify",
+  "version": "0.1.5",
+  "description": "Inform github deployment API of deployment",
+  "main": "lib/main.js",
+  "scripts": {
+    "test": "eslint 'src/*.js' && npm run-script compile && mocha",
+    "compile": "babel --presets es2015,stage-0 -d lib/ src/",
+    "prepublish": "npm run compile"
+  },
+  "bin": {
+    "flowdock-deploy-notify": "lib/main-cli.js"
+  },
+  "keywords": [
+    "flowdock"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lucified/github-deploy-notify.git"
+  },
+  "contributors": [
+    {
+      "name": "Juho Ojala",
+      "email": "juho@lucify.com"
+    },
+    {
+      "name": "Ville Saarinen",
+      "email": "ville.saarinen@lucify.com"
+    },
+    {
+      "name": "Ville Väänänen",
+      "email": "ville@lucify.com"
+    }
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "cli-table2": "^0.2.0",
+    "file-exists": "^1.0.0",
+    "handlebars": "^4.0.5",
+    "lodash": "^4.12.0",
+    "minimist": "^1.2.0",
+    "mkpath": "^1.0.0",
+    "path-exists": "^3.0.0",
+    "project-name": "^0.2.5",
+    "request": "^2.72.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.5.1",
+    "babel-eslint": "^6.0.4",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "chai": "^3.5.0",
+    "chai-files": "^1.2.0",
+    "del": "^2.2.0",
+    "eslint": "^2.8.0",
+    "eslint-config-airbnb": "^7.0.0",
+    "eslint-plugin-jsx-a11y": "^0.6.2",
+    "eslint-plugin-react": "^4.3.0",
+    "mocha": "^2.5.3"
+  }
+}
