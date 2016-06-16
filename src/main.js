@@ -5,7 +5,7 @@ const request = require('request');
 const utils = require('./utils');
 
 
-function githubDeploy(project, org, body, user, githubToken) {
+function githubDeploy(project, org, body, user, githubToken, cb) {
   const options = {
     url: `https://api.github.com/repos/${org}/${project}/deployments`,
     method: 'POST',
@@ -34,8 +34,10 @@ function githubDeploy(project, org, body, user, githubToken) {
       console.log(`BODY: ${JSON.stringify(BODY)}`);
       const err = new Error(`Received status ${STATUS}`);
       err.options = options;
+      cb(err);
       return;
     }
+    cb(false);
   });
 }
 

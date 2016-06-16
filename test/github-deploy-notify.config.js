@@ -1,6 +1,6 @@
 
 module.exports = {
-  githubToken: 'http://www.foo.com/bar',
+  githubToken: process.env.GITHUB_TOKEN,
   project: 'github-deploy-notify',
   org: 'lucified',
   user: 'lucified-lucifer',

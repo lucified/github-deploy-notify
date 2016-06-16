@@ -24,7 +24,7 @@ if (fileExists(configFile)) {
     console.log(`Using config from ${chalk.blue(resolvedPath)}`);
   }
   opts = require(resolvedPath);
-} else if (args.config) {
+} else {
   console.log(`[Error] ${configFile} does not exist`);
   process.exit(1);
 }
@@ -58,6 +58,9 @@ if (args.verbose) {
     if (key === 'githubToken' && value && value.length > 4) {
       val = Array(value.length - 3).join('*') + value.substring(value.length - 4);
     }
+    if (key === 'body') {
+      val = JSON.stringify(val);
+    }
     table.push({ [key]: val });
   });
   console.log(table.toString());
@@ -69,7 +72,7 @@ githubDeployNotify(preparedOpts, err => {
   }
   if (!args.silent) {
     console.log(`${chalk.green('✓')} ` // eslint-disable-line
-      + 'Finished sending notification to GitHub deployment API '
+      + 'Finished sending notification to GitHub deployment API in '
       + chalk.magenta(`${(process.hrtime(hrstart)[1] / 1000000).toFixed(2)} ms`));
   }
 });
